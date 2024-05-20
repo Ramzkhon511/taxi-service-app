@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taxi App</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://taxi-service-seven.vercel.app/" />
+    <meta property="og:title" content="Taxi Booking App" />
+    <meta
+      property="og:description"
+      content="Book your taxi with our easy-to-use Taxi Booking App."
+    />
+    <meta property="og:image" content="https://taxi-service-seven.vercel.app/logo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://taxi-service-seven.vercel.app/" />
+    <meta property="twitter:title" content="Taxi Booking App" />
+    <meta
+      property="twitter:description"
+      content="Book your taxi with our easy-to-use Taxi Booking App."
+    />
+    <meta property="twitter:image" content="https://taxi-service-seven.vercel.app/logo.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+
+    <script>
+      if (localStorage.theme === "dark" || !("theme" in localStorage)) {
+        document.querySelector("html").classList.add("dark");
+        document.querySelector("html").style.colorScheme = "dark";
+      } else {
+        document.querySelector("html").classList.remove("dark");
+        document.querySelector("html").style.colorScheme = "light";
+      }
+    </script>
+  </head>
+  <body
+    className="font-inter antialiased bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400"
+  >
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      if (localStorage.getItem("sidebar-expanded") == "true") {
+        document.querySelector("body").classList.add("sidebar-expanded");
+      } else {
+        document.querySelector("body").classList.remove("sidebar-expanded");
+      }
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
